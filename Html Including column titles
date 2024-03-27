@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Dataset Presentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="container-fluid" style="max-width: 95%;">
+        <ul st>
+            <li><strong>Dataset Explorer</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#Gen_search" role="button">Data</a></li>
+        </ul>
+    </nav>
+    <main class="container-fluid" style="max-width: 90%;">
+        <div class="grid">
+            <section>
+                <div
+                    style="margin-top: 50px;margin-bottom: 0px; padding-bottom: 200px; margin-left: 15px; margin-right: 15px; border-bottom: solid; border-color:grey;">
+                    <hgroup style="text-align: center;">
+                        <h2>Explore Our Library</h2>
+                        <h3> Economic History in some german university</h3>
+                    </hgroup>
+                    <p style="margin-top: 100px;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                        the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s
+                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                        desktop
+                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+
+                <div id="Gen_search"
+                    style="width: 20%; margin: auto; margin-bottom: 10px; margin-top: 30px; padding-top: 10px;">
+                    <input type="text" id="searchInputGeneral" class="search-input_2" placeholder="Keyword Search">
+                </div>
+
+                <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th class="search-container">
+                                   <label for="filterDropdown1">General Topic</label>     
+                                   <select id="filterDropdown1">
+                                            <option value="">Show All</option>
+                                            <option value="Kriminalstatistik">Kriminalstatistik</option>
+                                            <option value="Betriebsstatistik">Betriebsstatistik</option>
+                                            <option value="Krankenversicherungsstatistik">Krankenversicherungsstatistik</option>
+                                            <option value="Reichstagswahlen">Reichstagswahlen</option>
+                                            <option value="Einkommensbesteuerung">Einkommensbesteuerung</option>
+                                            <option value="Seeschiffahrt">Seeschiffahrt</option>
+                                            <option value="Waarenverkehr">Waarenverkehr</option>
+                                            <option value="Wasserverkehr">Wasserverkehr</option>
+                                            <option value="Bev&oumllkerungsstatistik">Bevölkerungsstatistik</option>
+                                            <option value="Armenpflege">Armenpflege</option>
+                                        </select>
+                                    </th>
+                                        <th class = "search-container"> 
+                                          <label for="filterDropdown2">Topic</label>
+                                          <select id="filterDropdown2">
+                                            <option value="">Show All</option>
+                                            <option value="Straftaten">Straftaten</option>
+                                            <option value="Verbrechen">Verbrechen</option>
+                                            <option value="Aburteilungen">Aburteilungen</option>
+                                            <option value="Verurteilungen">Verurteilungen</option>
+                                            <option value="Arbeitsschutz">Arbeitsschutz</option>
+                                            <option value="Gewerbestatistik">Gewerbestatistik</option>
+                                            <option value="Betriebe">Betriebe</option>
+                                            <option value="Maschinen">Maschinen</option>
+                                            <option value="Ackerland">Ackerland</option>
+                                            <option value="Personal">Personal</option>
+                                            <option value="Viehstand">Viehstand</option>
+                                            <option value="Weinbaubetriebe">Weinbaubetriebe</option>
+                                            <option value="Krankenkasse">Krankenkasse</option>
+                                            <option value="L&oumlhne">Löhne</option>
+                                            <option value="Steuer">Steuer</option>
+                                            <option value="Verm&oumlgen">Vermögen</option>
+                                            <option value="Handel">Handel</option>
+                                            <option value="Bev&oumllkerung">Bevölkerung</option>                                      
+                                        </select>
+                                    </th>
+                                        <th>Unit of Observation</th> 
+                                        <th class = "search-container">
+                                        <label for="filterDropdown4">Territory Unit</label>
+                                        <select id = "filterDropdown4"> 
+                                            <option value="">Show All</option>
+                                            <option value="Bezirke">Bezirke</option>
+                                            <option value="Gebietsabschnitte">Gebietsabschnitte</option>                         
+                                            <option value="Gebietsabteilungen">Gebietsabteilungen</option>
+                                            <option value="Grossst&aumldte">Grossstädte</option>
+                                            <option value="Kleinere Verwaltungsbezirke">Kleinere Verwaltungsbezirke</option>
+                                            <option value="L&aumlnder">Länder</option>
+                                            <option value="Landesfinanz&aumlmter">Landesfinanzämter</option>
+                                            <option value="Landesteile">Landesteile</option>
+                                            <option value="Oberlandesgerichtsbezirk">Oberlandesgerichtsbezirk</option>
+                                            <option value="Regierungsbezirke">Regierungsbezirke</option>
+                                            <option value="Staaten">Staaten</option>
+                                            <option value="Verwaltungsbezirke">Verwaltungsbezirke</option>
+                                            <option value="Wahlkreise">Wahlkreise</option>
+                                           </select>
+                                    </th>
+                                        <th class = "search-container"> 
+                                        <label for="filterDropdown5">Variable</label>
+                                        <select id="filterDropdown5">
+                                            <option value="">Show All</option>
+                                            <option value="Anzahl Strafen">Anzahl Strafen</option>
+                                            <option value="Anzahl Verst&oumsse">Anzahl Verstösse</option>
+                                            <option value="Anzah Verturteilte">Anzahl Verurteilte</option>
+                                            <option value="Bev&oumllkerung">Bevölkerung</option>
+                                            <option value="Anzahl Betriebe">Anzahl Betriebe</option>
+                                            <option value="Anzahl Erwerbst&aumltige">Anzahl Erwerbstätige</option>
+                                            <option value="Fl&aumlche der Betriebe">Fläche der Betriebe</option>
+                                            <option value="Gr&oumlsse des Viehstandes">Grösse des Viehstandes</option>
+                                            <option value="Einnahmen">Einnahmen</option>
+                                            <option value="Ausgaben">Ausgaben</option>
+                                            <option value="Aktiva">Aktiva</option>
+                                            <option value="Passiva">Passiva</option>
+                                            <option value="Prozentverh&aumlltnis">Prozentverhältnis</option>
+                                            <option value="Anzahl Erkrankungsf&aumlle">Anzahl Erkrankungsfälle</option>
+                                            <option value="Karenzzeit">Karenzzeit</option>
+                                            <option value="Unterst&uumltzungsdauer">Unterstützungsdauer</option>
+                                            <option value="Einkommen">Einkommen</option>
+                                            <option value="Einfuhr">Einfuhr</option>
+                                            <option value="Ausfuhr">Ausfuhr</option>
+                                            <option value="Durchfuhr">Durchfuhr</option> 
+                                            <option value="Menge">Menge</option>
+                                            <option value="Anzahl Geburte">Anzahl Geburte</option>
+                                            <option value="Anzahl Gestorbene">Anzahl Gestorbene</option>
+                                        </select>
+                                    </th>
+                                        <th class = "search-container"> 
+                                        <label for="filterDropdown6">Year of Observation</label>
+                                        <select id="filterDropdown6">
+                                        <option value="">Show All</option>
+                                        <option value="1841">1841</option>
+                                        <option value="1842">1842</option>
+                                        <option value="1843">1843</option>
+                                        <option value="1844">1844</option>
+                                        <option value="1845">1845</option>
+                                        <option value="1846">1846</option>
+                                        <option value="1847">1847</option>
+                                        <option value="1848">1848</option>
+                                        <option value="1849">1849</option>
+                                        <option value="1850">1850</option>
+                                        <option value="1851">1851</option>
+                                        <option value="1852">1852</option>
+                                        <option value="1853">1853</option>
+                                        <option value="1854">1854</option>
+                                        <option value="1855">1855</option>
+                                        <option value="1856">1856</option>
+                                        <option value="1857">1857</option>
+                                        <option value="1858">1858</option>
+                                        <option value="1859">1859</option>
+                                        <option value="1860">1860</option>
+                                        <option value="1861">1861</option>
+                                        <option value="1862">1862</option>
+                                        <option value="1863">1863</option>
+                                        <option value="1864">1864</option>
+                                        <option value="1865">1865</option>
+                                        <option value="1866">1866</option>
+                                        <option value="1867">1867</option>
+                                        <option value="1868">1868</option>
+                                        <option value="1869">1869</option>
+                                        <option value="1870">1870</option>
+                                        <option value="1871">1871</option>
+                                        <option value="1872">1872</option>
+                                        <option value="1873">1873</option>
+                                        <option value="1874">1874</option>
+                                        <option value="1875">1875</option>
+                                        <option value="1876">1876</option>
+                                        <option value="1877">1877</option>
+                                        <option value="1878">1878</option>
+                                        <option value="1879">1879</option>
+                                        <option value="1880">1880</option>
+                                        <option value="1881">1881</option>
+                                        <option value="1882">1882</option>
+                                        <option value="1883">1883</option>
+                                        <option value="1884">1884</option>
+                                        <option value="1885">1885</option>
+                                        <option value="1886">1886</option>
+                                        <option value="1887">1887</option>
+                                        <option value="1888">1888</option>
+                                        <option value="1889">1889</option>
+                                        <option value="1890">1890</option>
+                                        <option value="1891">1891</option>
+                                        <option value="1892">1892</option>
+                                        <option value="1893">1893</option>
+                                        <option value="1894">1894</option>
+                                        <option value="1896">1896</option>
+                                        <option value="1897">1897</option>
+                                        <option value="1898">1898</option>
+                                        <option value="1899">1899</option>
+                                        <option value="1902">1902</option>
+                                        <option value="1903">1903</option>
+                                        <option value="1904">1904</option>
+                                        <option value="1905">1905</option>
+                                        <option value="1906">1906</option>
+                                        <option value="1907">1907</option>
+                                        <option value="1908">1908</option>
+                                        <option value="1909">1909</option>
+                                        <option value="1910">1910</option>
+                                        <option value="1911">1911</option>
+                                        <option value="1912">1912</option>
+                                        <option value="1913">1913</option>
+                                        <option value="1914">1914</option>
+                                        <option value="1919">1919</option>
+                                        <option value="1920">1920</option>
+                                        <option value="1924">1924</option>
+                                        <option value="1927">1927</option>
+                                        <option value="1928">1928</option>
+                                    </select>
+                                    </th>
+                              <th>Signature</th>
+                              <th>Folge</th>
+                              <th>Volume</th>
+                              <th>Page</th>
+                              <th>Heft/Teil</th>
+                                       <th class = "search-container"> 
+                                        <label for="filterDropdown12">Title</label>
+                                        <select id="filterDropdown12">
+                                            <option value="">Show All</option>
+                                            <option value="Kriminalstatistik">Kriminalstatistik</option>
+                                            <option value="Berufsstatistik">Berufsstatistik</option>
+                                            <option value="Gewerbestatistik">Gewerbestatistik</option>
+                                            <option value="Betriebsstatistik">Betriebsstatistik</option>
+                                            <option value="Krankenversicherung der Arbeitern">Krankenversicherung</option>
+                                            <option value="Gewerbestatistik">Gewerbestatistik</option>
+                                            <option value="Reichstagswahlen">Reichstagswahlen</option>
+                                            <option value="Einkommensbesteuerung">Einkommensbesteuerung</option>
+                                            <option value="Seeschiffahrt">Seeschiffahrt</option>
+                                            <option value="Verkehr auf den deutschen Wasserstrassen">Wasserstrassen Verkehr</option>
+                                            <option value="Bev&oumllkerungsbewegung">Bevölkerungsbewegung</option>
+                                            <option value="&Oumlffentlichen Armenpflege">Öffentlichen Armenpflege</option>
+                                        </select>
+                                        </th>  
+                                <th>Damage</th>
+                                <th>Comment Unit of Observation</th>
+                                <th>Comment Variable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data rows will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+        <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
+            <h2>Contact Us</h2>
+
+            <p>Email: <a href="#">your-email@example.com</a></p>
+            <p>Website: <a href="#" target="_blank">https://yourwebsite.com</a></p>
+            <p>Phone: <a href="#">+1234567890</a></p>
+
+        </section>
+    </main>
+    <footer class="container">
+        <small>
+            <a href="#">Impressum</a>
+        </small>
+    </footer>
+
+    <script>
+        // Function to filter table
+        function filterTable(query, column = null) {
+            var tableRows = document.querySelectorAll('#dataTable tbody tr');
+            tableRows.forEach(function (row) {
+                var textContent = column === null ? row.textContent.toLowerCase() : row.cells[column].textContent.toLowerCase();
+                row.style.display = textContent.indexOf(query) > -1 ? '' : 'none';
+            });
+        }
+
+        // Event listeners for search inputs
+        document.getElementById('searchInputGeneral').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase());
+        });
+
+        // Adding listeners for specific column filters
+        document.getElementById('filterDropdown1').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 0);
+        });
+        document.getElementById('filterDropdown2').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 1);
+        });
+        document.getElementById('filterDropdown4').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 3);
+        });
+        document.getElementById('filterDropdown5').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 4);
+        });
+        document.getElementById('filterDropdown6').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 5);
+        });
+        document.getElementById('filterDropdown12').addEventListener('input', function () {
+            filterTable(this.value.toLowerCase(), 11);
+        });
+
+        // Function to load data from JSON file and populate the table
+        function loadData() {
+            fetch('data_3.json')
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+                    data.forEach(rowData => {
+                        let row = tableBody.insertRow();
+                        Object.values(rowData).forEach(text => {
+                            let cell = row.insertCell();
+                            cell.textContent = text;
+                        });
+                   });
+                })
+                .catch(error => console.error('Error loading data:', error));
+        }
+
+        // Load data when the page loads
+        window.onload = loadData;
+    </script>
+</body>
+
+</html>
