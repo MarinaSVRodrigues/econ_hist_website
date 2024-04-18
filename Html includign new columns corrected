@@ -23,7 +23,7 @@
         <ul>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#Gen_search" role="button">Data</a></li>
-            
+            <li><a href="#territoryOverview">Territory Overview</a></li>     
         </ul>
     </nav>
     <main class="container-fluid" style="max-width: 90%;">
@@ -261,6 +261,7 @@
         </div>
 
 <div>
+    <section id="territoryOverview" class="territory-section">   
     <h3 style="text-align: center;">Territory Division Overview</h3>
             <p style="margin-top: 50px;">Considering the different nomenclatures for each territory, this section provides an 
                 overview of every level covered by the presented statistics. Besides, the numbering system was created by us in
@@ -277,13 +278,9 @@
                 system. 
                 The number 30 represents erritory units related to the financia administrative system.
             </p> 
-            <section id="territoryOverview" class="territory-section">        
                     <table>
                         <thead>
                             <title>Territory Division Overview</title>
-                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-                            <meta name="viewport" content="width=device-width, initial-scale=1">
-                        
                             <style>
                                 html {
                                     scroll-behavior: smooth;
