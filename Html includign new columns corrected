@@ -34,17 +34,10 @@
                         <h2>Explore Our Library</h2>
                         <h3> Economic History in some german university</h3>
                     </hgroup>
-                    <p style="margin-top: 100px;">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type
-                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                        the
-                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                        1960s
-                        with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                        desktop
-                        publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    <p style="margin-top: 100px;">This dataset is a comprehensive collection of academic data of the 
+                        economic history library of the Ludwig Maximilians Universität of Munich, 
+                        meticulously curated for educational and research purposes. Explore a wide range of topics 
+                        and variables through our interactive table.
                     </p>
                 </div>
 
@@ -265,6 +258,25 @@
             </section>
 
         </div>
+<div>
+  <h3 style="text-align: center;">Territory Division Overview</h3>
+            <p style="margin-top: 50px;">Considering the different nomenclatures for each territory, this section provides an 
+                overview of every level covered by the presented statistics. Besides, the numbering system was created by us in
+                order to simplify this. 
+                The number 1 represents the largest unit, covering countries. 
+                The number 2 is the next largest unit and covers Gebietsabschnitte and Gebietsabteilungen. 
+                The number 3 is the next largest unit and covers states, called Staaten in the German Empire and 
+                Landesteile in Prussia. 
+                The number 4 is the finest unit and covers cities, called Verwaltungsbezirke, Bezirke or St&aumldte 
+                in the german Empire and Kreise in Prussia. 
+                As for number 10, it represents a different system, responsible for territory units related to the 
+                electorial system.
+                The number 20 represents another system, responsible for territory units related to the judicial 
+                system. 
+                The number 30 represents erritory units related to the financia administrative system.
+            </p> 
+ </div>
+        
         <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
             <h2>Contact Us</h2>
 
