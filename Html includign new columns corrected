@@ -260,8 +260,8 @@
 
         </div>
 
-<div>
-  <h3 style="text-align: center;">Territory Division Overview</h3>
+<div id="territoryTableContainer">
+    <h3 style="text-align: center;">Territory Division Overview</h3>
             <p style="margin-top: 50px;">Considering the different nomenclatures for each territory, this section provides an 
                 overview of every level covered by the presented statistics. Besides, the numbering system was created by us in
                 order to simplify this. 
@@ -277,7 +277,7 @@
                 system. 
                 The number 30 represents erritory units related to the financia administrative system.
             </p> 
-      <section id="territoryOverview" class="territory-section">
+            <section id="territoryOverview" class="territory-section">        
                     <table>
                         <thead>
                             <title>Territory Division Overview</title>
@@ -350,7 +350,7 @@
                             </tr>
                         </tbody>
                     </table>
-      </section>
+        </section>
  </div>
         
         <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
