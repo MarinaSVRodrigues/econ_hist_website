@@ -275,6 +275,86 @@
                 system. 
                 The number 30 represents erritory units related to the financia administrative system.
             </p> 
+      <section id="territoryOverview" class="territory-section">
+                    <table>
+                        <thead>
+                            <title>Territory Division Overview</title>
+                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                        
+                            <style>
+                                html {
+                                    scroll-behavior: smooth;
+                                }
+                        
+                                /* Centering the table */
+                                #territoryTableContainer {
+                                    margin: auto;
+                                    width: 100%; 
+                                }
+
+                            </style>
+                            <tr>
+                                <th>Territory Unit</th>
+                                <th>Numbering</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Länder</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Gebietsabschnitte</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Gebietsabteilungen</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Staaten</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Landesteile</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Grossstädte</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Verwaltungsbezirke</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Kleinere Verwaltungsbezirke</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Regierungsbezirke</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Bezirke</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Wahlkreise</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Oberlandesgerichtsbezirke</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Landesfinanzämter</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+      </section>
  </div>
         
         <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
