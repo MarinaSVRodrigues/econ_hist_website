@@ -274,7 +274,7 @@
             </section>
         </div>
 
-            <h3 id="territoryTableTitle">Territory Division Overview</h3>
+           <!-- <h3 id="territoryTableTitle">Territory Division Overview</h3> 
             <p>Considering the different omenclatures for each territory, this section provides an overview of 
                 every level covered by the presented statistics. Besides, the numbering system was created by us
                 in order to simplify this. 
@@ -375,7 +375,7 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </section> -->
 
         <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
             <h2>Contact Us</h2>
