@@ -51,21 +51,21 @@
                     <table id="dataTable">
                         <thead>
                             <tr>
-                                <th colspan="2">General Topic</th>
-                                <th colspan="2">Topic</th>
-                                <th colspan="2">Unit of Observation</th>
-                                <th colspan="2">Territory Unit</th>
-                                <th colspan="2">Variable</th>
-                                <th colspan="2">Year of Observation</th>
-                                <th colspan="2">Signature</th>
-                                <th colspan="2">Folge</th>
-                                <th colspan="2">Volume (Band)</th>
-                                <th colspan="2">Pages</th>
-                                <th colspan="2">Part (Heft)</th>
-                                <th colspan="2">Title</th>
-                                <th colspan="2">Damage</th>
-                                <th colspan="2">Comment Unit of Observation</th>
-                                <th colspan="2">Comment Variable</th>
+                                <th colspan="1">General Topic</th>
+                                <th colspan="1">Topic</th>
+                                <th colspan="1">Unit of Observation</th>
+                                <th colspan="1">Territory Unit</th>
+                                <th colspan="1">Variable</th>
+                                <th colspan="1">Year of Observation</th>
+                                <th colspan="1">Signature</th>
+                                <th colspan="1">Folge</th>
+                                <th colspan="1">Volume (Band)</th>
+                                <th colspan="1">Pages</th>
+                                <th colspan="1">Part (Heft)</th>
+                                <th colspan="1">Title</th>
+                                <th colspan="1">Damage</th>
+                                <th colspan="1">Comment Unit of Observation</th>
+                                <th colspan="1">Comment Variable</th>
                             </tr>
                             <tr>
                                 <th class="search-container">  
