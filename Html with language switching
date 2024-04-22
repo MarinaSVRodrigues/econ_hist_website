@@ -438,7 +438,7 @@
                         </div>
         
                         <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
-                            <table id="Daten Tabelle">
+                            <table id="dataTable">
                                 <thead>
                                     <tr>
                                         <th colspan="1">Allgemeines Themenbereich</th>
