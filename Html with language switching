@@ -453,7 +453,7 @@
                         'Title':'Titel',
                         'Damage':'Schaden',
                         'Comment Unit of Obs.':'Kommentar Beobachtungseinheit',
-                        'Comment Variable':'Kommentar Beobachtungseinheit'
+                        'Comment Variable':'Kommentar Variable'
                         };
 
              // Function to load data from JSON file and populate the table
