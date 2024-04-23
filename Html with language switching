@@ -461,7 +461,7 @@
                    fetch('data_4.json')
                   .then(response => response.json())
                   .then(data => {
-                  let table = document.getElementById('dataTable');
+                  let table = document.getElementById('dataTableGerman');
                   let tableBody = table.getElementsByTagName('tbody')[0];
 
             // Populate table headers with German column names
@@ -490,7 +490,7 @@
             window.onload = loadData;
        </script>
                         <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
-                            <table id="dataTable">
+                            <table id="dataTableGerman">
                                 <thead>
                                     <tr>
                                         <th colspan="1">Allgemeines Themenbereich</th>
