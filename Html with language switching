@@ -461,6 +461,7 @@
                    fetch('data_4.json')
                   .then(response => response.json())
                   .then(data => {
+                  console.log('Retrieved JSON data:', data);
                   let table = document.getElementById('dataTableGerman');
                   let tableBody = table.getElementsByTagName('tbody')[0];
 
