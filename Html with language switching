@@ -422,7 +422,7 @@
                             style="margin-top: 50px;margin-bottom: 0px; padding-bottom: 200px; margin-left: 15px; margin-right: 15px; border-bottom: solid; border-color:grey;">
                             <hgroup style="text-align: center;">
                                 <h2>Entdecken Sie unsere Inhalte</h2>
-                                <h2>Wirtschaftsfgeschichte an der Ludwig-Maximilians-Universität</h2>
+                                <h2>Wirtschaftsgeschichte an der Ludwig-Maximilians-Universität</h2>
                                 <h3>Daten von Statistische Jahrbücher des Deutschen Reichs</h3>
                             </hgroup>
                             <p style="margin-top: 100px;">Dieser Datensatz ist eine umfassende Sammlung historischer Daten der
@@ -436,9 +436,61 @@
                             style="width: 20%; margin: auto; margin-bottom: 10px; margin-top: 30px; padding-top: 10px;">
                             <input type="text" id="suche_input" class="suche_input_2" placeholder="Stichwort suchen">
                         </div>
-        
+<script>
+                        // Mapping object for English to German column names
+                        const columnMapping = {
+                        'General Topic': 'Allgemeines Themenbereich',
+                        'Topic': 'Thema',
+                        'Unit of Observation':'Beobachtungseinheit',
+                        'Territory Division':'Territoriale Einheit',
+                        'Variable':'Variable',
+                        'Year of Observation':'Beobachtungsjahr',
+                        'Signature':'Signatur',
+                        'Folge':'Folge',
+                        'Volume(Band)':'Band',
+                        'Pages':'Seiten',
+                        'Part (Heft)':'Heft',
+                        'Title':'Titel',
+                        'Damage':'Schaden',
+                        'Comment Unit of Obs.':'Kommentar Beobachtungseinheit',
+                        'Comment Variable':'Kommentar Beobachtungseinheit'
+                        };
+
+             // Function to load data from JSON file and populate the table
+                   function loadData() {
+                   fetch('data_4.json')
+                  .then(response => response.json())
+                  .then(data => {
+                  let table = document.getElementById('dataTable');
+                  let tableBody = table.getElementsByTagName('tbody')[0];
+
+            // Populate table headers with German column names
+                 let headerRow = table.createTHead().insertRow();
+                 Object.values(columnMapping).forEach(germanColumnName => {
+                 let th = document.createElement('th');
+                 th.textContent = germanColumnName;
+                 headerRow.appendChild(th);
+                });
+
+         // Populate table body with data
+                data.forEach(rowData => {
+                let row = tableBody.insertRow();
+                Object.keys(rowData).forEach(englishColumnName => {
+                    let cell = row.insertCell();
+                    // Use mapped German column name to access data
+                    let germanColumnName = columnMapping[englishColumnName];
+                    cell.textContent = rowData[englishColumnName];
+                });
+            });
+        })
+        .catch(error => console.error('Error loading data:', error));
+}
+
+        // Load data when the page loads
+            window.onload = loadData;
+       </script>
                         <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
-                            <table id="dataTableGerman">
+                            <table id="dataTable">
                                 <thead>
                                     <tr>
                                         <th colspan="1">Allgemeines Themenbereich</th>
@@ -455,7 +507,7 @@
                                         <th colspan="1">Titel</th>
                                         <th colspan="1">Schaden</th>
                                         <th colspan="1">Kommentar Beobachtungseinheit</th>
-                                        <th colspan="1">Kommentat Variable</th>
+                                        <th colspan="1">Kommentar Variable</th>
                                     </tr>
                                     <tr>
                                         <th class="search-container">  
@@ -656,29 +708,7 @@
                                 </tbody>
                             </table>
                         </div>
-        
                     </section>
-        <script>
-            // Function to load data from JSON file and populate the table
-            function loadData() {
-                        fetch('data_4.json')
-                            .then(response => response.json())
-                            .then(data => {
-                                let tableBody = document.getElementById('dataTableGerman').getElementsByTagName('tbody')[0];
-                                data.forEach(rowData => {
-                                    let row = tableBody.insertRow();
-                                    Object.values(rowData).forEach(text => {
-                                        let cell = row.insertCell();
-                                        cell.textContent = text;
-                                    });
-                               });
-                            })
-                            .catch(error => console.error('Error loading data:', error));
-                    }
-            
-                    // Load data when the page loads
-                    window.onload = loadData;
-        </script>
                 </div>
         
         <div>
