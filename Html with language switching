@@ -438,7 +438,7 @@
                         </div>
         
                         <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
-                            <table id="dataTable">
+                            <table id="dataTableGerman">
                                 <thead>
                                     <tr>
                                         <th colspan="1">Allgemeines Themenbereich</th>
@@ -658,7 +658,27 @@
                         </div>
         
                     </section>
-        
+        <script>
+            // Function to load data from JSON file and populate the table
+            function loadData() {
+                        fetch('data_4.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                let tableBody = document.getElementById('dataTableGerman').getElementsByTagName('tbody')[0];
+                                data.forEach(rowData => {
+                                    let row = tableBody.insertRow();
+                                    Object.values(rowData).forEach(text => {
+                                        let cell = row.insertCell();
+                                        cell.textContent = text;
+                                    });
+                               });
+                            })
+                            .catch(error => console.error('Error loading data:', error));
+                    }
+            
+                    // Load data when the page loads
+                    window.onload = loadData;
+        </script>
                 </div>
         
         <div>
