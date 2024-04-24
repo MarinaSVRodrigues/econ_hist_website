@@ -16,7 +16,6 @@
 
 <body>
     <script>
-        // Toggle between English and German content
         function toggleLanguage() {
             var englishContent = document.getElementById('englishContent');
             var germanContent = document.getElementById('germanContent');
@@ -50,7 +49,6 @@
                         <a href="territory_overview.html?lang=en">Territory Overview</a>
                         </div>   
 <script>
-// Toggle between English and German content
         function toggleLanguage() {
             var lang = document.documentElement.lang === "en" ? "de" : "en";
             window.location.search = new URLSearchParams({ lang }).toString();
