@@ -49,6 +49,7 @@
                         <div>
                         <a href="territory_overview.html?lang=en">Territory Overview</a>
                         </div>   
+<script>
 // Toggle between English and German content
         function toggleLanguage() {
             var lang = document.documentElement.lang === "en" ? "de" : "en";
