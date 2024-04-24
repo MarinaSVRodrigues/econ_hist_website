@@ -48,7 +48,13 @@
                         <li><a href="#Gen_search" role="button">Data</a></li>
                         <div>
                         <a href="territory_overview.html?lang=en">Territory Overview</a>
-                        </div>    
+                        </div>   
+// Toggle between English and German content
+        function toggleLanguage() {
+            var lang = document.documentElement.lang === "en" ? "de" : "en";
+            window.location.search = new URLSearchParams({ lang }).toString();
+        }
+    </script>
                     </ul>
                 </nav>
                 <main class="container-fluid" style="max-width: 90%;">
