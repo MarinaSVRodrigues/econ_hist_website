@@ -48,12 +48,6 @@
                         <div>
                         <a href="territory_overview.html?lang=en">Territory Overview</a>
                         </div>   
-<script>
-        function toggleLanguage() {
-            var lang = document.documentElement.lang === "en" ? "de" : "en";
-            window.location.search = new URLSearchParams({ lang }).toString();
-        }
-    </script>
                     </ul>
                 </nav>
                 <main class="container-fluid" style="max-width: 90%;">
