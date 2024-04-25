@@ -66,7 +66,7 @@
                                     meticulously curated for educational and research purposes. Explore a wide range of topics 
                                     and variables through our interactive table.
                                 </p>
-                                <p>The collection of this data accounts for diverse topics withing the period of the german empire 
+                                <p>This selection of data accounts for diverse topics withing the period of the german empire 
                                     (1871-1945). The selection focused on data available for smaller units of observation, excluding 
                                     information that was only available at the empire level. Therefore, it contains mostly disaggregated
                                     statistics, which enables a finer and more detailed comprehension of the specific topics throughout
@@ -361,59 +361,6 @@
                             style="width: 20%; margin: auto; margin-bottom: 10px; margin-top: 30px; padding-top: 10px;">
                             <input type="text" id="suche_input" class="suche_input_2" placeholder="Stichwort suchen">
                         </div>
-         <script>
-                        // Mapping object for English to German column names
-                        const columnMapping = {
-                        'General Topic': 'Allgemeinen Themenbereich',
-                        'Topic': 'Thema',
-                        'Unit of Observation':'Beobachtungseinheit',
-                        'Territory Division':'Territoriale Einheit',
-                        'Variable':'Variable',
-                        'Year of Observation':'Beobachtungsjahr',
-                        'Signature':'Signatur',
-                        'Folge':'Folge',
-                        'Volume(Band)':'Band',
-                        'Pages':'Seiten',
-                        'Part (Heft)':'Heft',
-                        'Title':'Titel',
-                        'Damage':'Schaden',
-                        'Comment Unit of Obs.':'Kommentar Beobachtungseinheit',
-                        'Comment Variable':'Kommentar Variable'
-                        };
-
-             // Function to load data from JSON file and populate the table
-                   function loadData() {
-                   fetch('data_4.json')
-                  .then(response => response.json())
-                  .then(data => {
-                  console.log('Retrieved JSON data:', data);
-                  let table = document.getElementById('dataTableGerman');
-                  let tableBody = table.getElementsByTagName('tbody')[0];
-
-            // Populate table headers with German column names
-                 let headerRow = table.createTHead().insertRow();
-                 Object.values(columnMapping).forEach(germanColumnName => {
-                 let th = document.createElement('th');
-                 th.textContent = germanColumnName;
-                 headerRow.appendChild(th);
-                });
-
-         // Populate table body with data
-                data.forEach(rowData => {
-                let row = tableBody.insertRow();
-                Object.keys(rowData).forEach(englishColumnName => {
-                    let cell = row.insertCell();
-                    // Use mapped German column name to access data
-                    let germanColumnName = columnMapping[englishColumnName];
-                    cell.textContent = rowData[englishColumnName];
-                });
-            });
-        })
-        .catch(error => console.error('Error loading data:', error));
-}
-        // Load data when the page loads
-            window.onload = loadData;
-       </script>
                         <div style="width: 100%; overflow-x: auto; margin: auto; max-height: 600px;">
                             <table id="dataTableGerman">
                                 <thead>
@@ -651,6 +598,55 @@
     </main>
 </div>
   <script>
+    // Column Mapping for English to German column headers
+    const columnMapping = {
+    'General Topic': 'Allgemeinen Themenbereich',
+    'Topic': 'Thema',
+    'Unit of Observation':'Beobachtungseinheit',
+    'Territory Division':'Territoriale Einheit',
+    'Variable':'Variable',
+    'Year of Observation':'Beobachtungsjahr',
+    'Signature':'Signatur',
+    'Folge':'Folge',
+    'Volume(Band)':'Band',
+    'Pages':'Seiten',
+    'Part (Heft)':'Heft',
+    'Title':'Titel',
+    'Damage':'Schaden',
+    'Comment Unit of Obs.':'Kommentar Beobachtungseinheit',
+    'Comment Variable':'Kommentar Variable'
+    };
+
+ // Function to get the current table ID based on language
+        function getCurrentTableID() {
+                return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
+            }
+ // Function to load data from JSON file and populate the table
+        function loadData() {
+        fetch('data_4.json')
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
+         data.forEach(rowData => {
+         let row = tableBody.insertRow();
+         if (document.documentElement.lang === 'de') {
+                                Object.keys(rowData).forEach(englishColumnName => {
+                                    let cell = row.insertCell();
+                                    // Use mapped German column name to access data
+                                    let germanColumnName = columnMapping[englishColumnName];
+                                    cell.textContent = rowData[germanColumnName];
+                                });
+                            } else {
+                                Object.values(rowData).forEach(text => {
+                                    let cell = row.insertCell();
+                                    cell.textContent = text;
+                                });
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error loading data:', error));
+            }
+
    // Function to filter table
    function filterTable(query, column = null) {
         var tableRows = document.querySelectorAll('#' + getCurrentTableID() + ' tbody tr');
@@ -687,32 +683,9 @@
                     document.getElementById('filterDropdown12').addEventListener('input', function () {
                         filterTable(this.value.toLowerCase(), 11);
                     });
-            
-                        // Function to get the current table ID based on language
-                    function getCurrentTableID() {
-                    return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
-                     }
-                    // Function to load data from JSON file and populate the table
-                    function loadData() {
-                    fetch('data_4.json')
-                    .then(response => response.json())
-                    .then(data => {
-                    let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
-                    data.forEach(rowData => {
-                    let row = tableBody.insertRow();
-                    Object.values(rowData).forEach(text => {
-                        let cell = row.insertCell();
-                        cell.textContent = text;
-                           });
-                       });
-                    })
-                  .catch(error => console.error('Error loading data:', error));
-                }
-            
-                    // Load data when the page loads
-                    window.onload = loadData;
+         // Load data when the page loads
+         window.onload = loadData;         
     </script>
 </body>
 
 </html>
-   
