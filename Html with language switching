@@ -650,18 +650,21 @@
             </footer>
     </main>
 </div>
-    <script>
-                    // Function to filter table
-                    function filterTable(query, column = null) {
-                        var tableRows = document.querySelectorAll('#dataTable tbody tr');
-                        tableRows.forEach(function (row) {
-                            var textContent = column === null ? row.textContent.toLowerCase() : row.cells[column].textContent.toLowerCase();
-                            row.style.display = textContent.indexOf(query) > -1 ? '' : 'none';
-                        });
-                    }
+  <script>
+   // Function to filter table
+   function filterTable(query, column = null) {
+        var tableRows = document.querySelectorAll('#' + getCurrentTableID() + ' tbody tr');
+        tableRows.forEach(function(row) {
+            var textContent = column === null ? row.textContent.toLowerCase() : row.cells[column].textContent.toLowerCase();
+            row.style.display = textContent.indexOf(query) > -1 ? '' : 'none';
+        });
+    }
             
                     // Event listeners for search inputs
                     document.getElementById('searchInputGeneral').addEventListener('input', function () {
+                        filterTable(this.value.toLowerCase());
+                    });
+                    document.getElementById('suche_input').addEventListener('input', function () {
                         filterTable(this.value.toLowerCase());
                     });
             
@@ -685,38 +688,26 @@
                         filterTable(this.value.toLowerCase(), 11);
                     });
             
+                        // Function to get the current table ID based on language
+                    function getCurrentTableID() {
+                    return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
+                     }
                     // Function to load data from JSON file and populate the table
                     function loadData() {
-                        fetch('data_4.json')
-                            .then(response => response.json())
-                            .then(data => {
-                                let tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
-                                data.forEach(rowData => {
-                                    let row = tableBody.insertRow();
-                                    Object.values(rowData).forEach(text => {
-                                        let cell = row.insertCell();
-                                        cell.textContent = text;
-                                    });
-                               });
-                            })
-                            .catch(error => console.error('Error loading data:', error));
-                    }
-                   // Same for German Data Table
-                    function loadData() {
-                        fetch('data_4.json')
-                            .then(response => response.json())
-                            .then(data => {
-                                let tableBody = document.getElementById('dataTableGerman').getElementsByTagName('tbody')[0];
-                                data.forEach(rowData => {
-                                    let row = tableBody.insertRow();
-                                    Object.values(rowData).forEach(text => {
-                                        let cell = row.insertCell();
-                                        cell.textContent = text;
-                                    });
-                               });
-                            })
-                            .catch(error => console.error('Error loading data:', error));
-                    }
+                    fetch('data_4.json')
+                    .then(response => response.json())
+                    .then(data => {
+                    let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
+                    data.forEach(rowData => {
+                    let row = tableBody.insertRow();
+                    Object.values(rowData).forEach(text => {
+                        let cell = row.insertCell();
+                        cell.textContent = text;
+                           });
+                       });
+                    })
+                  .catch(error => console.error('Error loading data:', error));
+                }
             
                     // Load data when the page loads
                     window.onload = loadData;
@@ -724,3 +715,4 @@
 </body>
 
 </html>
+   
