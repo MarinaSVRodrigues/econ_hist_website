@@ -701,6 +701,22 @@
                             })
                             .catch(error => console.error('Error loading data:', error));
                     }
+                   // Same for German Data Table
+                    function loadData() {
+                        fetch('data_4.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                let tableBody = document.getElementById('dataTableGerman').getElementsByTagName('tbody')[0];
+                                data.forEach(rowData => {
+                                    let row = tableBody.insertRow();
+                                    Object.values(rowData).forEach(text => {
+                                        let cell = row.insertCell();
+                                        cell.textContent = text;
+                                    });
+                               });
+                            })
+                            .catch(error => console.error('Error loading data:', error));
+                    }
             
                     // Load data when the page loads
                     window.onload = loadData;
