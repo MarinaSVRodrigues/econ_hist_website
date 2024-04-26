@@ -28,9 +28,17 @@
     <script>
         // Function to toggle between English and German
         function toggleLanguage() {
-            // Redirect to German version if language is set to German
-            window.location.href = "https://github.com/MarinaSVRodrigues/econ_hist_website/blob/patch-1/final_version_de.html";
-        }
+           // Fetch the content of the German version HTML file
+    fetch('final_version_de.html')
+        .then(response => response.text())
+        .then(html => {
+            // Replace the content of the current page with the content of the German version
+            document.open();
+            document.write(html);
+            document.close();
+        })
+        .catch(error => console.error('Error loading German version:', error));
+}
     </script>
                 </ul>
             </nav>
