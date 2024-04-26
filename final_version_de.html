@@ -30,12 +30,12 @@
     fetch('final_version_en.html')
         .then(response => response.text())
         .then(html => {
-            // Replace the content of the current page with the content of the German version
+            // Replace the content of the current page with the content of the English version
             document.open();
             document.write(html);
             document.close();
         })
-        .catch(error => console.error('Error loading German version:', error));
+        .catch(error => console.error('Error loading English version:', error));
 }
 </script>
         </ul>
