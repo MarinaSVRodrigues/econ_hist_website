@@ -679,7 +679,7 @@ const columnMapping = {
          // Populate table body with data
          data.forEach(rowData => {
          let row = tableBody.insertRow();
-         Object.values(rowData).forEach(englishColumnName => {
+         Object.keys(rowData).forEach(englishColumnName => {
                             let cell = row.insertCell();
                             // Use mapped German column name to access data
                             let germanColumnName = columnMapping[englishColumnName];
