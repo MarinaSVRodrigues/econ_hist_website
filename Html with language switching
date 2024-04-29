@@ -686,7 +686,7 @@ const columnMapping = {
                 let cell = row.insertCell();
                 // Use mapped German column name to access data
                 let germanColumnName = columnMapping[englishColumnName];
-                cell.textContent = rowData[englishColumnName];
+                cell.textContent = rowData[germanColumnName];
             });
         });
     }
