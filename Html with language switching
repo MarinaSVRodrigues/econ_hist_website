@@ -657,20 +657,22 @@ const columnMapping = {
                     });
 
 
- // Function to load data from JSON file and populate the table
+ // Function to load data from JSON file and populate the tables for English and German versions
         function loadData() {
         fetch('data_4.json')
             .then(response => response.json())
             .then(data => {
                 let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
                 
-             // Populate table headers with German column names
+             // Populate table headers with German column names if necessary 
+                   if (getCurrentTableID() === 'dataTableGerman') {
                     let headerRow = table.createTHead().insertRow();
                     Object.keys(columnMapping).forEach(englishColumnName => {
                         let th = document.createElement('th');
                         th.textContent = columnMapping[englishColumnName];
                         headerRow.appendChild(th);
                     });
+                }
          // Populate table body with data
          data.forEach(rowData => {
          let row = tableBody.insertRow();
