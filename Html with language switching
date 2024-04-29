@@ -15,11 +15,7 @@
 </head>
 
 <body>
-       <!-- Language Switch Button -->
-    <div style="position: absolute; top: 75px; right:10px;">
-        <button onclick="toggleLanguage()">English/Deutsch</button>
-    </div>
-<script>
+       <script>
         // Function to toggle between English and German content
         function toggleLanguage(lang) {
             if (lang === 'en') {
@@ -31,6 +27,10 @@
             }
         }
     </script>
+    <!-- Language Switch Button -->
+    <div style="position: absolute; top: 75px; right:10px;">
+        <button onclick="toggleLanguage()">English/Deutsch</button>
+    </div>
 
     <!-- English Content -->
     <div id="englishContent">
@@ -295,7 +295,7 @@
                             </div>
             
                         </section>
-                    
+                    </div>
                     
                     <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
                         <h2>Contact Us</h2>
