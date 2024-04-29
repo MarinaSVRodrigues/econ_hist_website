@@ -16,14 +16,19 @@
 
 <body>
        <script>
-        // Function to toggle between English and German content
-        function toggleLanguage(lang) {
-            if (lang === 'en') {
-                document.getElementById('englishContent').style.display = 'block';
-                document.getElementById('germanContent').style.display = 'none';
-            } else if (lang === 'de') {
-                document.getElementById('englishContent').style.display = 'none';
-                document.getElementById('germanContent').style.display = 'block';
+        // Toggle between English and German content
+        function toggleLanguage() {
+            var englishContent = document.getElementById('englishContent');
+            var germanContent = document.getElementById('germanContent');
+    
+            if (englishContent.style.display === 'none') {
+                englishContent.style.display = 'block';
+                germanContent.style.display = 'none';
+                document.documentElement.lang = "en"; // Set language to English
+            } else {
+                englishContent.style.display = 'none';
+                germanContent.style.display = 'block';
+                document.documentElement.lang = "de"; // Set language to German
             }
         }
     </script>
@@ -106,7 +111,7 @@
                                                         <option value="Seeschiffahrt">Seeschiffahrt</option>
                                                         <option value="Waarenverkehr">Waarenverkehr</option>
                                                         <option value="Wasserverkehr">Wasserverkehr</option>
-                                                        <option value="Bev&oumllkerungsstatistik">Bevölkerungsstatistik</option>
+                                                        <option value="Bevölkerungsstatistik">Bevölkerungsstatistik</option>
                                                         <option value="Armenpflege">Armenpflege</option>
                                                     </select>
                                                 </th>
@@ -593,6 +598,24 @@
     </main>
 </div>
   <script>
+    // Mapping object for English to german column names 
+const columnMapping = {
+                        'General Topic': 'Allgemeinen Themenbereich',
+                        'Topic': 'Thema',
+                        'Unit of Observation': 'Beobachtungseinheit',
+                        'Territory Division': 'Territoriale Einheit',
+                        'Variable': 'Variable',
+                        'Year of Observation': 'Beobachtungsjahr',
+                        'Signature': 'Signatur',
+                        'Folge': 'Folge',
+                        'Volume(Band)': 'Band',
+                        'Pages': 'Seiten',
+                        'Part (Heft)': 'Heft',
+                        'Title': 'Titel',
+                        'Damage': 'Schaden',
+                        'Comment Unit of Obs.': 'Kommentar Beobachtungseinheit',
+                        'Comment Variable': 'Kommentar Variable'
+                    };
     // Function to get the current table ID based on language
         function getCurrentTableID() {
                 return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
@@ -640,23 +663,7 @@
             .then(response => response.json())
             .then(data => {
                 let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
-                const columnMapping = {
-                        'General Topic': 'Allgemeinen Themenbereich',
-                        'Topic': 'Thema',
-                        'Unit of Observation': 'Beobachtungseinheit',
-                        'Territory Division': 'Territoriale Einheit',
-                        'Variable': 'Variable',
-                        'Year of Observation': 'Beobachtungsjahr',
-                        'Signature': 'Signatur',
-                        'Folge': 'Folge',
-                        'Volume(Band)': 'Band',
-                        'Pages': 'Seiten',
-                        'Part (Heft)': 'Heft',
-                        'Title': 'Titel',
-                        'Damage': 'Schaden',
-                        'Comment Unit of Obs.': 'Kommentar Beobachtungseinheit',
-                        'Comment Variable': 'Kommentar Variable'
-                    };
+                
              // Populate table headers with German column names
                     let headerRow = table.createTHead().insertRow();
                     Object.keys(columnMapping).forEach(englishColumnName => {
