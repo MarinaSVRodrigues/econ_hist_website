@@ -666,31 +666,49 @@ const columnMapping = {
         });
     }
  // Function to load data from JSON file and populate the tables for English and German versions
-        function loadData() {
+    function loadData() {
         fetch('data_4.json')
             .then(response => response.json())
             .then(data => {
-                let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
-                
-             // Populate table headers with German column names if necessary
-                if (getCurrentTableID() === 'dataTableGerman') {
-                    populateGermanTableHeaders();
+                if (document.documentElement.lang === 'de') {
+                    populateGermanTable(data);
+                } else {
+                    populateEnglishTable(data);
                 }
-         // Populate table body with data
-         data.forEach(rowData => {
-         let row = tableBody.insertRow();
-         Object.keys(rowData).forEach(englishColumnName => {
-                            let cell = row.insertCell();
-                            // Use mapped German column name to access data
-                            let germanColumnName = columnMapping[englishColumnName];
-                            cell.textContent = rowData[englishColumnName];
-                        });
-                    });
-                })
-                .catch(error => console.error('Error loading data:', error));
-        }
-          // Load data when the page loads
-         window.onload = loadData;
+            })
+            .catch(error => console.error('Error loading data:', error));
+    }
+
+    // Populate English table with data
+    function populateEnglishTable(data) {
+        let tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        data.forEach(rowData => {
+            let row = tableBody.insertRow();
+            Object.values(rowData).forEach(text => {
+                let cell = row.insertCell();
+                cell.textContent = text;
+            });
+        });
+    }
+
+    // Populate German table with data using column mapping
+    function populateGermanTable(data) {
+        let tableBody = document.getElementById('dataTableGerman').getElementsByTagName('tbody')[0];
+        data.forEach(rowData => {
+            let row = tableBody.insertRow();
+            Object.keys(rowData).forEach(englishColumnName => {
+                let cell = row.insertCell();
+                // Use mapped German column name to access data
+                let germanColumnName = columnMapping[englishColumnName];
+                cell.textContent = rowData[germanColumnName];
+            });
+        });
+    }
+
+    // Load data and populate table when the page loads
+    window.onload = function() {
+        loadData();
+    };
     </script>
 </body>
 
