@@ -665,21 +665,7 @@ const columnMapping = {
             headerRow.appendChild(th);
         });
     }
- // Function to load data from JSON file and populate the tables for English and German versions
-    function loadData() {
-        fetch('data_4.json')
-            .then(response => response.json())
-            .then(data => {
-                if (document.documentElement.lang === 'de') {
-                    populateGermanTable(data);
-                } else {
-                    populateEnglishTable(data);
-                }
-            })
-            .catch(error => console.error('Error loading data:', error));
-    }
-
-    // Populate English table with data
+     // Populate English table with data
     function populateEnglishTable(data) {
         let tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
         data.forEach(rowData => {
@@ -704,6 +690,20 @@ const columnMapping = {
             });
         });
     }
+// Function to load data from JSON file and populate the tables for English and German versions
+    function loadData() {
+        fetch('data_4.json')
+            .then(response => response.json())
+            .then(data => {
+                if (document.documentElement.lang === 'de') {
+                    populateGermanTable(data);
+                } else {
+                    populateEnglishTable(data);
+                }
+            })
+            .catch(error => console.error('Error loading data:', error));
+    }
+
 
     // Load data and populate table when the page loads
     window.onload = function() {
