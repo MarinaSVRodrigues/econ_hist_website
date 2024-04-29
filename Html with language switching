@@ -656,7 +656,15 @@ const columnMapping = {
                         filterTable(this.value.toLowerCase(), 11);
                     });
 
-
+    // Function to populate table headers with German column names
+    function populateGermanTableHeaders() {
+        let headerRow = document.getElementById('dataTableGerman').createTHead().insertRow();
+        Object.values(columnMapping).forEach(germanColumnName => {
+            let th = document.createElement('th');
+            th.textContent = germanColumnName;
+            headerRow.appendChild(th);
+        });
+    }
  // Function to load data from JSON file and populate the tables for English and German versions
         function loadData() {
         fetch('data_4.json')
@@ -664,14 +672,9 @@ const columnMapping = {
             .then(data => {
                 let tableBody = document.getElementById(getCurrentTableID()).getElementsByTagName('tbody')[0];
                 
-             // Populate table headers with German column names if necessary 
-                   if (getCurrentTableID() === 'dataTableGerman') {
-                    let headerRow = table.createTHead().insertRow();
-                    Object.keys(columnMapping).forEach(englishColumnName => {
-                        let th = document.createElement('th');
-                        th.textContent = columnMapping[englishColumnName];
-                        headerRow.appendChild(th);
-                    });
+             // Populate table headers with German column names if necessary
+                if (getCurrentTableID() === 'dataTableGerman') {
+                    populateGermanTableHeaders();
                 }
          // Populate table body with data
          data.forEach(rowData => {
