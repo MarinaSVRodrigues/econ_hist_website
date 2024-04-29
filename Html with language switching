@@ -15,26 +15,22 @@
 </head>
 
 <body>
-    <script>
-        function toggleLanguage() {
-            var englishContent = document.getElementById('englishContent');
-            var germanContent = document.getElementById('germanContent');
-    
-            if (englishContent.style.display === 'none') {
-                englishContent.style.display = 'block';
-                germanContent.style.display = 'none';
-                document.documentElement.lang = "en"; // Set language to English
-            } else {
-                englishContent.style.display = 'none';
-                germanContent.style.display = 'block';
-                document.documentElement.lang = "de"; // Set language to German
-            }
-        }
-    </script>
-    <!-- Language Switch Button -->
+       <!-- Language Switch Button -->
     <div style="position: absolute; top: 75px; right:10px;">
         <button onclick="toggleLanguage()">English/Deutsch</button>
     </div>
+<script>
+        // Function to toggle between English and German content
+        function toggleLanguage(lang) {
+            if (lang === 'en') {
+                document.getElementById('englishContent').style.display = 'block';
+                document.getElementById('germanContent').style.display = 'none';
+            } else if (lang === 'de') {
+                document.getElementById('englishContent').style.display = 'none';
+                document.getElementById('germanContent').style.display = 'block';
+            }
+        }
+    </script>
 
     <!-- English Content -->
     <div id="englishContent">
@@ -299,8 +295,7 @@
                             </div>
             
                         </section>
-            
-         </div>          
+                    
                     
                     <section id="contact" class="contact-section" style="text-align: center; margin-top: 150px;">
                         <h2>Contact Us</h2>
