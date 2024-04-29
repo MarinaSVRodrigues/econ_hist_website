@@ -686,16 +686,11 @@ const columnMapping = {
                             cell.textContent = rowData[englishColumnName];
                         });
                     });
-        }
-          // Load data when the page loads
-         window.onload = function() {
-            loadData()
-                .then(data => {
-                    populateGermanTableHeaders();
-                    populateGermanTable(data);
                 })
                 .catch(error => console.error('Error loading data:', error));
-        };      
+        }
+          // Load data when the page loads
+         window.onload = loadData;
     </script>
 </body>
 
