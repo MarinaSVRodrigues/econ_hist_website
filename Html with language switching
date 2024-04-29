@@ -107,7 +107,7 @@
                                                         <option value="Betriebsstatistik">Betriebsstatistik</option>
                                                         <option value="Krankenversicherungsstatistik">Krankenversicherungsstatistik</option>
                                                         <option value="Reichstagswahlen">Reichstagswahlen</option>
-                                                        <option value="Einkommensbesteuerung">Einkommensbesteuerung</option>
+                                                        <option value="Einkommenbesteuerung">Einkommensbesteuerung</option>
                                                         <option value="Seeschiffahrt">Seeschiffahrt</option>
                                                         <option value="Waarenverkehr">Waarenverkehr</option>
                                                         <option value="Wasserverkehr">Wasserverkehr</option>
@@ -389,7 +389,7 @@
                                                     <option value="Betriebsstatistik">Betriebsstatistik</option>
                                                     <option value="Krankenversicherungsstatistik">Krankenversicherungsstatistik</option>
                                                     <option value="Reichstagswahlen">Reichstagswahlen</option>
-                                                    <option value="Einkommensbesteuerung">Einkommensbesteuerung</option>
+                                                    <option value="Einkommenbesteuerung">Einkommensbesteuerung</option>
                                                     <option value="Seeschiffahrt">Seeschiffahrt</option>
                                                     <option value="Waarenverkehr">Waarenverkehr</option>
                                                     <option value="Wasserverkehr">Wasserverkehr</option>
@@ -413,9 +413,9 @@
                                                     <option value="Viehstand">Viehstand</option>
                                                     <option value="Weinbaubetriebe">Weinbaubetriebe</option>
                                                     <option value="Krankenkasse">Krankenkasse</option>
-                                                    <option value="L&oumlhne">Löhne</option>
+                                                    <option value="Beitr&aumlge-L&oumlhne Verh&aumlltnis">Beiträge-Löhne Verhältnis</option>
                                                     <option value="Steuer">Steuer</option>
-                                                    <option value="Verm&oumlgen">Vermögen</option>
+                                                    <option value="Verm&oumlgensrechnung">Vermögen</option>
                                                     <option value="Handel">Handel</option>
                                                     <option value="Bev&oumllkerung">Bevölkerung</option>                                      
                                                 </select>
@@ -428,7 +428,7 @@
                                                     <option value="Gebietsabschnitte">Gebietsabschnitte</option>                         
                                                     <option value="Gebietsabteilungen">Gebietsabteilungen</option>
                                                     <option value="Grossst&aumldte">Grossstädte</option>
-                                                    <option value="Kleinere Verwaltungsbezirke">Kleinere Verwaltungsbezirke</option>
+                                                    <option value="Kleine Verwaltungsbezirke">Kleine Verwaltungsbezirke</option>
                                                     <option value="L&aumlnder">Länder</option>
                                                     <option value="Landesfinanz&aumlmter">Landesfinanzämter</option>
                                                     <option value="Landesteile">Landesteile</option>
@@ -442,12 +442,12 @@
                                                 <th class = "search-container"> 
                                                 <select id="filterDropdown5">
                                                     <option value="">Alles zeigen</option>
-                                                    <option value="Anzahl Strafen">Anzahl Strafen</option>
-                                                    <option value="Anzahl Verst&oumsse">Anzahl Verstösse</option>
-                                                    <option value="Anzah Verturteilte">Anzahl Verurteilte</option>
+                                                    <option value="Anzahl Strafbare Handlungen">Anzahl Strafbare Handlungen</option>
+                                                    <option value="Anzahl Verstosse">Anzahl Verstösse</option>
+                                                    <option value="Anzahl Verturteilte">Anzahl Verurteilte</option>
                                                     <option value="Bev&oumllkerung">Bevölkerung</option>
                                                     <option value="Anzahl Betriebe">Anzahl Betriebe</option>
-                                                    <option value="Anzahl Erwerbst&aumltige">Anzahl Erwerbstätige</option>
+                                                    <option value="Anzahl Erwerbst&aumltige Personen">Anzahl Erwerbstätige</option>
                                                     <option value="Fl&aumlche der Betriebe">Fläche der Betriebe</option>
                                                     <option value="Gr&oumlsse des Viehstandes">Grösse des Viehstandes</option>
                                                     <option value="Einnahmen">Einnahmen</option>
