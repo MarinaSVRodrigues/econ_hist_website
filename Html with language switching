@@ -46,7 +46,7 @@
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#Gen_search" role="button">Data</a></li>
                         <div>
-                        <a href="territory_overview.html?lang=en">Territory Overview</a>
+                        <a href="territory_overview_en.html">Territory Overview</a>
                         </div>   
                     </ul>
                 </nav>
@@ -330,7 +330,7 @@
                 <li><a href="#Kontakt">Kontakt</a></li>
                 <li><a href="#Gen_suche" role="button">Daten</a></li>
                 <div>
-                <a href="territory_overview.html?lang=de">Territoriale Übersicht</a>
+                <a href="territory_overview_de.html">Territoriale Übersicht</a>
                 </div>
             </ul>
         </nav>
@@ -357,7 +357,7 @@
                             </p>
                         </div>
         
-                        <div id="#Gen_suche"
+                        <div id="Gen_suche"
                             style="width: 20%; margin: auto; margin-bottom: 10px; margin-top: 30px; padding-top: 10px;">
                             <input type="text" id="suche_input" class="suche_input_2" placeholder="Stichwort suchen">
                         </div>
@@ -598,6 +598,10 @@
     </main>
 </div>
   <script>
+    // Function to get the current table ID based on language
+        function getCurrentTableID() {
+                return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
+            }
    // Function to filter table
    function filterTable(query, column = null) {
         var tableRows = document.querySelectorAll('#' + getCurrentTableID() + ' tbody tr');
@@ -634,10 +638,7 @@
                         filterTable(this.value.toLowerCase(), 11);
                     });
 
- // Function to get the current table ID based on language
-        function getCurrentTableID() {
-                return document.documentElement.lang === 'de' ? 'dataTableGerman' : 'dataTable';
-            }
+
  // Function to load data from JSON file and populate the table
         function loadData() {
         fetch('data_4.json')
