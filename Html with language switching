@@ -679,18 +679,23 @@ const columnMapping = {
          // Populate table body with data
          data.forEach(rowData => {
          let row = tableBody.insertRow();
-         Object.keys(rowData).forEach(englishColumnName => {
+         Object.values(rowData).forEach(englishColumnName => {
                             let cell = row.insertCell();
                             // Use mapped German column name to access data
                             let germanColumnName = columnMapping[englishColumnName];
                             cell.textContent = rowData[englishColumnName];
                         });
                     });
-                })
-                .catch(error => console.error('Error loading data:', error));
         }
           // Load data when the page loads
-         window.onload = loadData;        
+         window.onload = function() {
+            loadData()
+                .then(data => {
+                    populateGermanTableHeaders();
+                    populateGermanTable(data);
+                })
+                .catch(error => console.error('Error loading data:', error));
+        };      
     </script>
 </body>
 
