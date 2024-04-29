@@ -38,7 +38,7 @@
     </div>
 
     <!-- English Content -->
-    <div id="englishContent">
+    <div id="englishContent" lang="en">
                 <nav class="container-fluid" style="max-width: 95%;">
                     <ul st>
                         <li><strong>Dataset Explorer</strong></li>
