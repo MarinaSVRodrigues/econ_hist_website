@@ -659,7 +659,7 @@ const columnMapping = {
     // Function to populate table headers with German column names
     function populateGermanTableHeaders() {
         let headerRow = document.getElementById('dataTableGerman').createTHead().insertRow();
-        Object.values(columnMapping).forEach(germanColumnName => {
+        Object.keys(columnMapping).forEach(germanColumnName => {
             let th = document.createElement('th');
             th.textContent = germanColumnName;
             headerRow.appendChild(th);
