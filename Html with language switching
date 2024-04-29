@@ -708,6 +708,12 @@ const columnMapping = {
     // Load data and populate table when the page loads
     window.onload = function() {
         loadData();
+        .then(data => {
+            populateEnglishTable(data); // Populate English table
+            populateGermanTableHeaders(); // Populate German table headers
+            populateGermanTable(data); // Populate German table
+        })
+        .catch(error => console.error('Error loading data:', error));
     };
     </script>
 </body>
