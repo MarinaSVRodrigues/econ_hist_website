@@ -321,7 +321,7 @@
 </div>
 
     <!-- German Content -->
-    <div id="germanContent" style="display: none;">
+    <div id="germanContent" lang="de" style="display: none;">
         <nav class="container-fluid" style="max-width: 95%;">
             <ul>
                 <li><strong>Datensatzerkundler</strong></li>
