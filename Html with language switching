@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body onload="loadData()">
        <script>
         // Toggle between English and German content
         function toggleLanguage() {
