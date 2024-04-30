@@ -14,7 +14,19 @@
 
 </head>
 
-<body onload="loadData()">
+<body onload="loadData() {
+    fetch('data_4.json')
+        .then(response => response.json())
+        .then(data => {
+            const contentId = document.getElementById('englishContent').style.display === 'none' ? 'dataTableGerman' : 'dataTable';
+            if (contentId === 'dataTableGerman') {
+                populateGermanTable(data);
+            } else {
+                populateEnglishTable(data);
+            }
+        })
+        .catch(error => console.error('Error loading data:', error));
+}">
        <script>
         // Toggle between English and German content
         function toggleLanguage() {
@@ -690,20 +702,6 @@ const columnMapping = {
             });
         });
     }
-// Function to load data from JSON file and populate the tables for English and German versions
-function loadData() {
-    fetch('data_4.json')
-        .then(response => response.json())
-        .then(data => {
-            const contentId = document.getElementById('englishContent').style.display === 'none' ? 'dataTableGerman' : 'dataTable';
-            if (contentId === 'dataTableGerman') {
-                populateGermanTable(data);
-            } else {
-                populateEnglishTable(data);
-            }
-        })
-        .catch(error => console.error('Error loading data:', error));
-}
 
 
     // Load data and populate table when the page loads
