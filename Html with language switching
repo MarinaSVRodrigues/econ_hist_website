@@ -14,19 +14,7 @@
 
 </head>
 
-<body onload= loadData() {
-    fetch('data_4.json')
-        .then(response => response.json())
-        .then(data => {
-            const contentId = document.getElementById('englishContent').style.display === 'none' ? 'dataTableGerman' : 'dataTable';
-            if (contentId === 'dataTableGerman') {
-                populateGermanTable(data);
-            } else {
-                populateEnglishTable(data);
-            }
-        })
-        .catch(error => console.error('Error loading data:', error));
-}>
+<body>
        <script>
         // Toggle between English and German content
         function toggleLanguage() {
@@ -43,6 +31,19 @@
                 document.documentElement.lang = "de"; // Set language to German
             }
         }
+        function onload= loadData() {
+        fetch('data_4.json')
+        .then(response => response.json())
+        .then(data => {
+            const contentId = document.getElementById('englishContent').style.display === 'none' ? 'dataTableGerman' : 'dataTable';
+            if (contentId === 'dataTableGerman') {
+                populateGermanTable(data);
+            } else {
+                populateEnglishTable(data);
+            }
+        })
+        .catch(error => console.error('Error loading data:', error));
+}
     </script>
     <!-- Language Switch Button -->
     <div style="position: absolute; top: 75px; right:10px;">
