@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="loadData() {
+<body onload= loadData() {
     fetch('data_4.json')
         .then(response => response.json())
         .then(data => {
@@ -26,7 +26,7 @@
             }
         })
         .catch(error => console.error('Error loading data:', error));
-}">
+}>
        <script>
         // Toggle between English and German content
         function toggleLanguage() {
